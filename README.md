@@ -1,5 +1,7 @@
-# vue_nuxt
-
+# conditions list
+```
+a test task
+```
 ## Project setup
 ```
 npm install
