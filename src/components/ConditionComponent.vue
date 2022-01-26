@@ -25,6 +25,7 @@
     import AgeConditionComponent from './conditions/AgeConditionComponent.vue'
     import CardTypeConditionComponent from './conditions/CardTypeConditionComponent.vue'
     import CardStatusConditionComponent from './conditions/CardStatusConditionComponent.vue'
+    
     let uuid = 0
     export default {
         props: [
@@ -115,7 +116,6 @@
 
     .button-line {
         display: flex;
-
     }
 
     .delbutton {
