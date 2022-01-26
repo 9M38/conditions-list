@@ -13,7 +13,7 @@
                 <option value="pending">Pending</option>
             </select>
         </div>
-        <button @click="addCardStatus()"> <span class="big">+</span> Add card Status</button>
+        <button @click="addCardStatus()"> <span class="big">+</span> Add card status</button>
     </div>
 </template>
 
@@ -51,11 +51,8 @@
                 this.addCardStatus()
             }
         },
-
-
-
-
     }
+
 </script>
 
 <style scoped>
@@ -104,7 +101,6 @@
 
     button:hover {
         background-color: yellowgreen;
-        ;
         color: white;
         cursor: pointer;
     }
