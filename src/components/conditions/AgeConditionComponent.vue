@@ -43,7 +43,6 @@
                     'min': '',
                     'max': ''
                 })
-
             }
         },
 
@@ -53,7 +52,6 @@
                 this.condition_obj.ranges = []
                 this.addRange()
             }
-
         }
     }
 </script>
@@ -112,7 +110,6 @@
 
     button:hover {
         background-color: yellowgreen;
-        ;
         color: white;
         cursor: pointer;
     }
