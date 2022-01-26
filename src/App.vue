@@ -2,8 +2,8 @@
   <div class="root">
     <side-bar />
     <div class="page-space">
-    <headbar />
-    <page />
+      <headbar />
+      <page />
     </div>
   </div>
 </template>
@@ -27,14 +27,15 @@
   * {
     box-sizing: border-box;
     margin: 0;
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-  }
-  .root{
-    display: flex;
-  }
-  .page-space{
-    flex-grow: 1;
-   
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   }
 
+  .root {
+    display: flex;
+  }
+
+  .page-space {
+    flex-grow: 1;
+
+  }
 </style>

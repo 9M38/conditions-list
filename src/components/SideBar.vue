@@ -5,7 +5,7 @@
         <circle cx="80" cy="40" r="20" fill="red" />
       </svg>
     </div>
-    <ul class="side-nav"  >
+    <ul class="side-nav">
       <li class="side-nav-item item-active">
         <div class="item-icon">
         </div>
@@ -31,7 +31,6 @@
       ?
     </div>
   </div>
-
 </template>
 
 <script>
@@ -49,12 +48,14 @@
     border: 1px solid lightgray;
     min-width: 10rem;
   }
-  .side-nav{
+
+  .side-nav {
     flex-grow: 1;
     list-style-type: none;
     padding: 4px;
   }
-  .side-nav-item{
+
+  .side-nav-item {
     height: 7rem;
     border: 3px solid transparent;
     border-radius: 10px;
@@ -62,29 +63,33 @@
     display: flex;
     flex-direction: column;
   }
-  .item-icon{
-      background-color: gray;
-      border-radius: 4px;
-      width: 3rem;
-      height: 3rem;
-      margin: 1.5rem auto 0;
+
+  .item-icon {
+    background-color: gray;
+    border-radius: 4px;
+    width: 3rem;
+    height: 3rem;
+    margin: 1.5rem auto 0;
   }
-  .item-text{
+
+  .item-text {
     margin: 0 auto;
   }
-  .side-nav-item:hover{
+
+  .side-nav-item:hover {
     border: 3px solid rgb(169, 216, 93);
     color: rgb(169, 216, 93);
     cursor: pointer;
   }
 
-  .item-active{
+  .item-active {
     height: 7rem;
-    background-color:  lightgray;
+    background-color: lightgray;
     border-radius: 10px;
     margin: 5px;
   }
-  .help{
+
+  .help {
     height: 3rem;
     width: 3rem;
     border: 3px solid black;
@@ -95,11 +100,11 @@
     margin: 2rem auto;
     color: green;
   }
-  .help:hover{
+
+  .help:hover {
     background-color: rgb(169, 216, 93);
     border: 3px solid rgb(169, 216, 93);
     color: white;
     cursor: pointer;
   }
-
 </style>

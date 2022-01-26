@@ -16,17 +16,14 @@
             <li class="page-nav-item">
                 Respondents
             </li>
-
         </ul>
         <div class="main">
             <p class="secondary-info"> Add poll </p>
             <div class="conditions-list">
-                <transition-group name="list">
-
-
+                <!--transition-group name="list"-->
                     <condition-component class="condition" v-for="condition, i in conditions" :key="i" :position=i
                         :condition=condition :bgcolor=colors[i%colors_len] @deleted=deleteCondition />
-                </transition-group>
+                <!--/transition-group-->
             </div>
             <div class="huge-add-button" @click="addCondition()">
                 <h1>+</h1>
@@ -49,11 +46,12 @@
     import ConditionComponent from "../components/ConditionComponent.vue";
     import axios from 'axios'
 
-
     export default {
+
         components: {
             ConditionComponent
         },
+
         data() {
             return {
                 conditions: [],
@@ -65,11 +63,13 @@
                 ]
             }
         },
+
         computed: {
             colors_len() {
                 return this.colors.length
             }
         },
+        
         methods: {
             addCondition() {
                 this.condition_id++
@@ -79,7 +79,6 @@
                 })
             },
 
-
             deleteCondition(condition_obj) {
                 let index = this.conditions.findIndex(element => {
                     if (element.condition_id === condition_obj.condition_id) {
@@ -87,8 +86,8 @@
                     }
                 })
                 this.conditions.splice(index, 1)
-
             },
+
             async submitCondition() {
                 let cond = JSON.parse(JSON.stringify(this.conditions))
                 for (let i = 0; i < cond.length; i++) {
@@ -106,19 +105,20 @@
         }
     }
 </script>
-<style scoped>
 
+<style scoped>
     .page {
         margin: 2.5rem auto;
         max-width: 1200px;
-
     }
+
     .page-nav {
         list-style-type: none;
         display: flex;
         justify-content: space-evenly;
         padding: 0;
     }
+
     .page-nav-item {
         font-size: 1rem;
         margin: 0 10px;
@@ -129,6 +129,7 @@
         flex-grow: 1;
         color: green;
     }
+
     .page-nav-item:hover {
         font-weight: 600;
         cursor: pointer;
@@ -136,12 +137,14 @@
         margin-bottom: 0;
         color: black;
     }
+
     .main {
         border-top: rgb(189, 238, 144) 2px solid;
         box-shadow: 0px 10px 10px rgb(148, 148, 148);
         padding-bottom: 1px;
         /* likely bug*/
     }
+
     .secondary-info {
         color: rgb(170, 170, 170);
         font-size: 0.8rem;
@@ -149,6 +152,7 @@
         margin: 1rem 0;
         padding-left: 2rem;
     }
+
     .huge-add-button {
         border: 2px solid lightgrey;
         border-radius: 4px;
@@ -158,6 +162,7 @@
         margin: 2rem;
         transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.2s;
     }
+
     .huge-add-button:hover {
         cursor: pointer;
         background-color: rgb(189, 238, 144);
@@ -169,12 +174,14 @@
         padding: 2rem;
         background-color: rgb(221, 232, 243);
     }
+
     .page-footer>button {
         height: 2rem;
         width: 10rem;
         border-radius: 4px;
         font-weight: 600;
     }
+
     .button-next {
         background-color: green;
         color: white;
@@ -185,8 +192,6 @@
     .button-next:hover {
         cursor: pointer;
         background-color: yellowgreen;
-        
-
     }
 
     .button-test {

@@ -5,16 +5,16 @@
             <div class="user">
                 <div class="user-pic">
                     <svg height="40" width="40">
-        <circle cx="18" cy="18" r="18" fill="gray" />
-      </svg>
+                        <circle cx="18" cy="18" r="18" fill="gray" />
+                    </svg>
                 </div>
                 <div class="user-info">
-                <h5 class="user-info-name">
-                    Alexandr C.
-                </h5>
-                <p class="user-info-rank">
-                    Administrator
-                </p>
+                    <h5 class="user-info-name">
+                        Alexandr C.
+                    </h5>
+                    <p class="user-info-rank">
+                        Administrator
+                    </p>
                 </div>
             </div>
         </div>
@@ -30,47 +30,55 @@
                     Add poll
                 </li>
             </ul>
-        </div> 
+        </div>
     </header>
 </template>
 
 <style scoped>
-header{
-    display: flex;
-    flex-direction: column;
-}
-.topline{
-    display:flex;
-    overflow:auto;
-    margin: 2rem
-}
-#search{
-    width: 400px;
-    height: 2rem;
-    margin: 0 auto 0 0;
-}
-.user{
-    width: 200px;
-    display: flex;
-}
-.user-info-rank{
-    font-size: 0.8rem;
-}
-.nav{
-    display:flex;
-    list-style-type: none;
-    margin: 0 2rem;
-    padding: 0;
-}
-.nav-link{
-    font-size: 14px;
-}
-.nav-link:hover{
-    font-weight: 600;
-    cursor: pointer;
-}
-.muted{
-    font-weight: 600;
-    color: gray;
-}
+    header {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .topline {
+        display: flex;
+        overflow: auto;
+        margin: 2rem
+    }
+
+    #search {
+        width: 400px;
+        height: 2rem;
+        margin: 0 auto 0 0;
+    }
+
+    .user {
+        width: 200px;
+        display: flex;
+    }
+
+    .user-info-rank {
+        font-size: 0.8rem;
+    }
+
+    .nav {
+        display: flex;
+        list-style-type: none;
+        margin: 0 2rem;
+        padding: 0;
+    }
+
+    .nav-link {
+        font-size: 14px;
+    }
+
+    .nav-link:hover {
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .muted {
+        font-weight: 600;
+        color: gray;
+    }
 </style>

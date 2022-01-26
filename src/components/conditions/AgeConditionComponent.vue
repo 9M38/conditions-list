@@ -5,18 +5,14 @@
                 <div class="label-or" v-if="i != 0">
                     OR
                 </div>
-                <p>Range {{i+1}}</p> 
-                </div>
-
+                <p>Range {{i+1}}</p>
+            </div>
             <div class="range-input">
                 from <input type="text" name="" id="" v-model="range['min']">
                 to <input type="text" name="" id="" v-model="range['max']">
             </div>
-
         </div>
         <button @click="addRange()"> <span class="big">+</span> Add range</button>
-
-
     </div>
 </template>
 
@@ -30,37 +26,39 @@
                 return this.condition
             }
         },
+
         methods: {
-             cleanup(){
-                for (let prop in this.condition_obj){
-                    if(prop != "condition_id")
-                      if(prop != "type")
-                      if (prop !="ranges"){
-                        delete this.condition_obj[prop]
-                    }
+            cleanup() {
+                for (let prop in this.condition_obj) {
+                    if (prop != "condition_id")
+                        if (prop != "type")
+                            if (prop != "ranges") {
+                                delete this.condition_obj[prop]
+                            }
                 }
             },
 
             addRange() {
-                    this.condition_obj.ranges.push({
+                this.condition_obj.ranges.push({
                     'min': '',
                     'max': ''
                 })
-                
+
             }
         },
+
         mounted() {
             this.cleanup()
-            if (this.condition_obj.ranges == undefined)
-            {   
+            if (this.condition_obj.ranges == undefined) {
                 this.condition_obj.ranges = []
                 this.addRange()
             }
 
-        },
+        }
     }
 </script>
 <style scoped>
+
     .range {
         display: flex;
         margin: 1rem 2rem;
@@ -73,7 +71,8 @@
     .range-input {
         align-items: left;
     }
-    .label-or{
+
+    .label-or {
         display: inline-block;
         border-radius: 4px;
         background-color: rgb(226, 204, 195);
@@ -82,7 +81,8 @@
         height: 2rem;
         width: 2rem;
     }
-    .range-name >p{
+
+    .range-name>p {
         display: inline-block;
     }
 
@@ -105,7 +105,8 @@
         border-radius: 4px;
         font-weight: 600;
     }
-    button>text{
+
+    button>text {
         margin: auto;
     }
 

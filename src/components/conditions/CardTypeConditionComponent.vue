@@ -5,15 +5,15 @@
                 <div class="label-or" v-if="i != 0">
                     OR
                 </div>
-                <p>Type {{i+1}}</p> 
-                </div>
+                <p>Type {{i+1}}</p>
+            </div>
             <select name="" id="" v-model="condition_obj.cardtypes[i]">
                 <option value="gold"> Gold</option>
                 <option value="silver">Silver</option>
                 <option value="casual">Casual</option>
             </select>
         </div>
-        <button @click="addCardType()"><span class="big">+</span>  Add card type</button>
+        <button @click="addCardType()"><span class="big">+</span> Add card type</button>
     </div>
 </template>
 
@@ -27,14 +27,15 @@
                 return this.condition
             }
         },
+
         methods: {
-            cleanup(){
-                for (let prop in this.condition_obj){
-                    if(prop != "condition_id")
-                      if(prop != "type")
-                      if (prop !="cardtypes"){
-                        delete this.condition_obj[prop]
-                    }
+            cleanup() {
+                for (let prop in this.condition_obj) {
+                    if (prop != "condition_id")
+                        if (prop != "type")
+                            if (prop != "cardtypes") {
+                                delete this.condition_obj[prop]
+                            }
                 }
             },
 
@@ -42,17 +43,14 @@
                 this.condition_obj.cardtypes.push('gold')
             }
         },
+
         mounted() {
-           this.cleanup();
-            if (this.condition_obj.cardtypes == undefined)
-            {   
+            this.cleanup();
+            if (this.condition_obj.cardtypes == undefined) {
                 this.condition_obj.cardtypes = []
                 this.addCardType()
             }
-
-        },
-
-       
+        }
     }
 </script>
 
@@ -61,10 +59,12 @@
         display: flex;
         margin: 1rem 2rem;
     }
-    .card-name{
+
+    .card-name {
         width: 160px;
     }
-    .label-or{
+
+    .label-or {
         display: inline-block;
         border-radius: 4px;
         background-color: rgb(226, 204, 195);
@@ -73,10 +73,12 @@
         height: 2rem;
         width: 2rem;
     }
-    .card-name >p{
+
+    .card-name>p {
         display: inline-block;
     }
-    select{
+
+    select {
         width: 400px;
         background-color: white;
         height: 2rem;
@@ -85,7 +87,7 @@
     }
 
     button {
-         margin: 2rem 2rem 1rem calc(140px + 2rem);
+        margin: 2rem 2rem 1rem calc(140px + 2rem);
         margin-bottom: 1rem;
         height: 2rem;
         width: 10rem;

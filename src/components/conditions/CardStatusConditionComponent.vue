@@ -1,12 +1,12 @@
 <template>
     <div class="condition-card-Status">
         <div class="card-Status" v-for="cardStatus,i in condition_obj.cardStates" :key="i">
-             <div class="card-name">
+            <div class="card-name">
                 <div class="label-or" v-if="i != 0">
                     OR
                 </div>
-                <p>Status {{i+1}}</p> 
-                </div>
+                <p>Status {{i+1}}</p>
+            </div>
             <select name="" id="" v-model="condition_obj.cardStates[i]">
                 <option value="active"> Active</option>
                 <option value="inactive">Inactive</option>
@@ -27,25 +27,26 @@
                 return this.condition
             }
         },
+
         methods: {
-             cleanup(){
-                for (let prop in this.condition_obj){
-                    if(prop != "condition_id")
-                      if(prop != "type")
-                      if (prop !="cardStates"){
-                        delete this.condition_obj[prop]
-                    }
+            cleanup() {
+                for (let prop in this.condition_obj) {
+                    if (prop != "condition_id")
+                        if (prop != "type")
+                            if (prop != "cardStates") {
+                                delete this.condition_obj[prop]
+                            }
                 }
             },
 
             addCardStatus() {
-                    this.condition_obj.cardStates.push('active')
+                this.condition_obj.cardStates.push('active')
             }
         },
+
         mounted() {
             this.cleanup()
-           if (this.condition_obj.cardStates == undefined)
-            {   
+            if (this.condition_obj.cardStates == undefined) {
                 this.condition_obj.cardStates = []
                 this.addCardStatus()
             }
@@ -62,10 +63,12 @@
         display: flex;
         margin: 1rem 2rem;
     }
-    .card-name{
+
+    .card-name {
         width: 140px;
     }
-    .label-or{
+
+    .label-or {
         display: inline-block;
         border-radius: 4px;
         background-color: rgb(226, 204, 195);
@@ -74,10 +77,12 @@
         height: 2rem;
         width: 2rem;
     }
-    .card-name >p{
+
+    .card-name>p {
         display: inline-block;
     }
-    select{
+
+    select {
         width: 400px;
         background-color: white;
         height: 2rem;
@@ -86,7 +91,7 @@
     }
 
     button {
-         margin: 2rem 2rem 1rem calc(140px + 2rem);
+        margin: 2rem 2rem 1rem calc(140px + 2rem);
         margin-bottom: 1rem;
         height: 2rem;
         width: 10rem;
